@@ -1,6 +1,6 @@
 # OpenDingux beta buildroot on macOS
 
-The OpenDingux beta buildroot require a case-sensitive file system. Unfortunately, the default macOS file system is not case-sensitive. Hence this repo.
+The OpenDingux beta buildroot requires a case-sensitive file system. Unfortunately, the default macOS file system is not case-sensitive.
 
 ## Requirements
 
