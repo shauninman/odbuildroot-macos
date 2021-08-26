@@ -22,6 +22,6 @@ Anything in the `workspace/` folder is accessible to both macOS and the Debian d
 
 Once in the shell (you'll see a prompt like `root@bc605c7d06c9:~/workspace#`), the first thing you need to do is `cd` into `buildroot/` and run `CONFIG=<PLATFORM> ./rebuild.sh` and then go do something else. For a while. We're talking hours. With any luck when you get back (or wake up) you'll have an `output/<PLATFORM>/` folder in the repo, and inside that an `images/` folder containing an OpenDingux beta installer named something like `<PLATFORM>-update-<YYYY>-<MM>-<DD>.opk`.
 
-After that initial build, you can make changes and run `CONFIG=<PLATFORM> make` from the `output/<PLATFORM>/` folder and it will take minutes instead of hours to rebuild. You'll make those changes in the `output/<PLATFORM>/` folder itself. (Usually to files in the `build/` or `target/` folders therein.) But beware, unless you copy those changes up to the corresponding files in `board/opendingux/` they will be overwritten the next time you run `rebuild.sh` from the repo root.
+After that initial build, you can make changes and run `CONFIG=<PLATFORM> make` from the `output/<PLATFORM>/` folder and it will take minutes instead of hours to rebuild. You'll make those changes in the `output/<PLATFORM>/` folder itself. (Usually to files in the `build/` or `target/` folders therein.) But beware, unless you copy those changes up to the corresponding files in `board/opendingux/` they will be overwritten the next time you run `CONFIG=<PLATFORM> rebuild.sh`.
 
 Good luck!
