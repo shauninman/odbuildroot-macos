@@ -6,6 +6,10 @@ The OpenDingux beta buildroot require a case-sensitive file system. Unfortunatel
 
 I'm pretty sure you just need `git` and `docker` installed, everything else should be stock macOS.
 
+## Getting started
+
+Clone this repo, `cd odbuildroot-macos && make`. Done.
+
 ## What this repo does
 
 First it creates a 20GB case-sensitive spare disk image named `od-docker` and mounts it. (This has been enough to build OpenDingux beta for the RS-90 with ~5GB to spare.) Then it unzips `od-docker.zip` into the root of the new volume. (This directory is zipped to avoid confusion, we only want to be working on the case-sensitive disk image. It just contains a Dockerfile and a Makefile to configure it.) Then it clones the OpenDingux buildroot repo into its workspace directory and starts up a Debian docker image with all the pre-requisites. Finally, it opens the `workspace/` folder in the Finder and a shell in the docker image where you can build OpenDingux.
