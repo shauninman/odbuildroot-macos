@@ -4,7 +4,7 @@ The OpenDingux beta buildroot requires a case-sensitive file system. Unfortunate
 
 ## Requirements
 
-I'm pretty sure you just need `git` and `docker` installed, everything else should be stock macOS.
+I'm pretty sure you just need `git` and `docker` installed, everything else should be stock macOS. Oh, you also need to bump Docker's Memory up from 2GB to 8GB. That setting can be found under Docker.app's Preferences > Resources > ADVANCED.
 
 ## Getting started
 
