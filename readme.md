@@ -12,7 +12,7 @@ Clone this repo, then `cd odbuildroot-macos && make`. Done.
 
 ## What this repo does
 
-First it creates a 20GB case-sensitive sparse disk image named `od-docker` and mounts it. (This has been enough to build OpenDingux beta for the RS-90 with ~5GB to spare.) Then it unzips `od-docker.zip` into the root of the new volume. (This directory is zipped to avoid confusion, we only want to be working on the case-sensitive disk image. It just contains a Dockerfile and a Makefile to configure it.) Then it clones the OpenDingux buildroot repo into its `workspace/` directory and starts up a Debian docker image with all the prerequisites. Finally, it opens the `workspace/` folder in the Finder and a shell in the docker image where you can build OpenDingux.
+First it creates a 20GB case-sensitive sparse disk image named `od-docker` and mounts it. (Building for RS-90 used ~15GB. Building for GCW0 separately used ~17GB.) Then it unzips `od-docker.zip` into the root of the new volume. (This directory is zipped to avoid confusion, we only want to be working on the case-sensitive disk image. It just contains a Dockerfile and a Makefile to configure it.) Then it clones the OpenDingux buildroot repo into its `workspace/` directory and starts up a Debian docker image with all the prerequisites. Finally, it opens the `workspace/` folder in the Finder and a shell in the docker image where you can build OpenDingux.
 
 All this happens the first time you run `make` from this directory. Subsequent times it will only do what's necessary to get you back into the shell. When you're done with the shell you can `exit` and eject the disk image. Or leave it mounted. Whichever. It will all spring back to life the next time you run `make` from this directory.
 
