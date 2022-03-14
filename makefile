@@ -1,5 +1,6 @@
 .DEFAULT_GOAL := all
 
+ODGITREPO=https://github.com/OpenDingux/buildroot
 IMAGENAME=od-docker
 SPARSEIMAGE=$(IMAGENAME).sparseimage
 VOLUMEPATH=/Volumes/$(IMAGENAME)
@@ -20,7 +21,7 @@ $(DOCKERFILE): $(MOUNTFILE)
 	if [ ! -f "$(DOCKERFILE)" ]; then unzip -j $(IMAGENAME).zip -d $(VOLUMEPATH) && mkdir -p $(WORKSPACE); fi
 
 $(BUILDROOT): $(DOCKERFILE)
-	if [ ! -f "$(BUILDROOT)" ]; then cd $(WORKSPACE) && git clone --recursive https://github.com/OpenDingux/buildroot; fi
+	if [ ! -f "$(BUILDROOT)" ]; then cd $(WORKSPACE) && git clone --recursive $(ODGITREPO); fi
 
 all: $(BUILDROOT)
 	open $(WORKSPACE)
